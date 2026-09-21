@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Suivi personnel du master en finance d'entreprise : apprentissage, ressources, certifications, candidatures, compétences et frise.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23C8F25A'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='sans-serif' font-weight='700' font-size='28' fill='%231B2405'%3ECF%3C/text%3E%3C/svg%3E">
+<title>Cap Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EEEDF4; --surface:#FFFFFF; --surface-2:#F6F5FA; --ink:#17141F; --ink-2:#5F5A70; --line:#E4E2EC; --line-strong:#B9B5C8;
+  --lime:#C8F25A; --lime-ink:#1B2405; --violet:#6D4DFF; --violet-soft:#E6E1FF;
+  --lav:#E5E1F8; --sky:#DCEBF8; --peach:#FBE3D3; --mint:#DAF2E2;
+  --side:#17131F; --side-2:#262032; --side-ink:#EFEBFA; --side-mute:#9A93AE;
+  --ok:#1F9D57; --warn:#C77A0A; --bad:#C2413B;
+  --f-display:"Bricolage Grotesque","DM Sans",system-ui,sans-serif;
+  --f-body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F0D15; --surface:#1A1724; --surface-2:#221E2E; --ink:#F1EEF9; --ink-2:#A6A0B9; --line:#2D2839; --line-strong:#4A4460;
+    --violet:#9A82FF; --violet-soft:#2E2666;
+    --lav:#2A2548; --sky:#1B2C3F; --peach:#3B2B23; --mint:#1D3327;
+    --side:#0A0810; --side-2:#1B1726;
+    --ok:#4CC98A; --warn:#E5A33B; --bad:#EE7B75;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F0D15; --surface:#1A1724; --surface-2:#221E2E; --ink:#F1EEF9; --ink-2:#A6A0B9; --line:#2D2839; --line-strong:#4A4460;
+  --violet:#9A82FF; --violet-soft:#2E2666;
+  --lav:#2A2548; --sky:#1B2C3F; --peach:#3B2B23; --mint:#1D3327;
+  --side:#0A0810; --side-2:#1B1726;
+  --ok:#4CC98A; --warn:#E5A33B; --bad:#EE7B75;
+}
+*{box-sizing:border-box}
+html,body{background:var(--bg)}
+body{color:var(--ink);font-family:var(--f-body);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;letter-spacing:-.02em}
+.mono{font-family:var(--f-mono)}
+
+.app{display:grid;grid-template-columns:248px minmax(0,1fr);gap:16px;padding:16px;max-width:1360px;margin:0 auto;align-items:start}
+.side{position:sticky;top:16px;height:calc(100vh - 32px);max-height:860px;background:var(--side);color:var(--side-ink);border-radius:24px;padding:18px 14px;display:flex;flex-direction:column;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;padding:2px 6px}
+.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--lime);color:var(--lime-ink);display:grid;place-items:center;font-family:var(--f-display);font-weight:700;font-size:15px;flex:none}
+.brand b{font-family:var(--f-display);font-size:16px;display:block;line-height:1.1}
+.brand span{font-size:11px;color:var(--side-mute)}
+.nav{display:flex;flex-direction:column;gap:4px}
+.nav button{display:flex;align-items:center;gap:10px;border:0;background:transparent;color:var(--side-mute);padding:10px 12px;border-radius:13px;text-align:left;font-weight:500;white-space:nowrap}
+.nav button:hover{background:var(--side-2);color:var(--side-ink)}
+.nav button[aria-current="page"]{background:var(--violet);color:#fff}
+.nav svg,.ico{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.side-foot{margin-top:auto;background:var(--side-2);border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center}
+.side-foot b{font-family:var(--f-display);display:block;font-size:14px}
+.side-foot span{font-size:12px;color:var(--side-mute)}
+
+.main{min-width:0;display:flex;flex-direction:column;gap:16px}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;padding:8px 4px 0}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2)}
+.top h1{font-size:clamp(28px,4vw,40px);line-height:1.05;margin-top:6px}
+.lede{color:var(--ink-2);max-width:62ch;margin-top:8px}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--surface);border-radius:99px;padding:8px 14px;font-weight:500;font-size:13px}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--lime);display:block}
+
+.card{background:var(--surface);border-radius:22px;padding:20px;min-width:0}
+.card h2{font-size:18px}
+.card-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:14px}
+.muted{color:var(--ink-2)}
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g-home{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+
+.stat{display:flex;flex-direction:column;gap:10px;justify-content:space-between}
+.stat .num{font-family:var(--f-display);font-weight:700;font-size:46px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stat .num small{font-size:16px;font-weight:500;color:var(--ink-2);margin-left:4px}
+.stat .lab{font-weight:500}
+.stat.lime{background:var(--lime);color:var(--lime-ink)}
+.stat.lime .num small,.stat.lime .muted{color:rgba(27,36,5,.7)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar>i{display:block;height:100%;border-radius:99px;background:var(--violet)}
+.lime .bar{background:rgba(27,36,5,.14)}
+.lime .bar>i{background:var(--lime-ink)}
+
+.next{background:var(--lime);color:var(--lime-ink);display:flex;flex-direction:column;gap:14px;justify-content:space-between;min-height:190px}
+.next .eyebrow{color:rgba(27,36,5,.65)}
+.next h2{font-size:clamp(22px,2.6vw,30px);line-height:1.12}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:99px;padding:10px 16px;font-weight:700;background:var(--ink);color:var(--surface);text-decoration:none;width:fit-content}
+.btn:hover{opacity:.88}
+.btn.ghost{background:transparent;border:1.5px solid var(--line-strong);color:var(--ink)}
+.btn.sm{padding:6px 12px;font-size:12px}
+
+.dark{background:var(--side);color:var(--side-ink)}
+.dark .eyebrow{color:var(--side-mute)}
+.pips{display:flex;gap:8px;margin:14px 0 10px}
+.pip{flex:1;height:46px;border-radius:14px;border:1.5px dashed #4A4460;display:grid;place-items:center;font-family:var(--f-mono);font-size:11px;color:var(--side-mute)}
+.pip.on{background:var(--lime);border:0;color:var(--lime-ink);font-weight:500}
+.pip.bonus{border-color:#6a6383}
+
+.track{display:flex;gap:4px;margin:16px 0 10px;position:relative}
+.seg{border-radius:12px;height:42px;padding:6px 10px;font-family:var(--f-mono);font-size:11px;display:flex;align-items:flex-end;overflow:hidden;white-space:nowrap;color:var(--ink)}
+.seg.t1{background:var(--lav)}.seg.t2{background:var(--sky)}.seg.t3{background:var(--peach)}.seg.t4{background:var(--mint)}
+.now{position:absolute;top:-6px;bottom:-6px;width:0;border-left:2px solid var(--ink)}
+.now::before{content:"";position:absolute;top:-2px;left:-7px;width:12px;height:12px;border-radius:50%;background:var(--lime);border:2px solid var(--ink)}
+.legend{display:flex;justify-content:space-between;font-family:var(--f-mono);font-size:11px;color:var(--ink-2)}
+
+.folder{position:relative;border:0;text-align:left;border-radius:18px;padding:34px 18px 16px;margin-top:14px;display:flex;flex-direction:column;gap:22px;min-height:132px;color:var(--ink)}
+.folder::before{content:"";position:absolute;left:0;top:-14px;width:46%;height:24px;border-radius:14px 14px 0 0;background:inherit}
+.folder .ft{font-family:var(--f-mono);font-weight:500;font-size:13px}
+.folder .fm{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin-top:auto}
+.folder:hover{filter:brightness(.97)}
+.tone-lav{background:var(--lav)}.tone-sky{background:var(--sky)}.tone-peach{background:var(--peach)}.tone-mint{background:var(--mint)}
+.folder .fp{font-family:var(--f-display);font-weight:700;font-size:30px;letter-spacing:-.03em;line-height:1}
+
+.course{display:flex;flex-direction:column;gap:14px}
+.course-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.tag{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:4px 9px;border-radius:99px;background:rgba(0,0,0,.07);white-space:nowrap}
+:root[data-theme="dark"] .tag{background:rgba(255,255,255,.1)}
+.course h3{font-size:20px;line-height:1.15}
+.course p.note{color:var(--ink-2);font-size:13px}
+.tone{border-radius:22px;padding:20px}
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.checks label{display:flex;gap:12px;align-items:flex-start;padding:8px 6px;border-radius:12px;cursor:pointer}
+.checks label:hover{background:rgba(0,0,0,.04)}
+.checks .done{color:var(--ink-2);text-decoration:line-through;text-decoration-color:var(--line-strong)}
+.checks .opt{font-family:var(--f-mono);font-size:10.5px;color:var(--ink-2);margin-left:6px}
+.cb{appearance:none;-webkit-appearance:none;width:20px;height:20px;border-radius:7px;border:1.5px solid var(--line-strong);background:var(--surface);display:grid;place-content:center;cursor:pointer;flex:none;margin:1px 0 0}
+.cb:checked{background:var(--ink);border-color:var(--ink)}
+.cb:checked::after{content:"";width:9px;height:5px;border-left:2px solid var(--lime);border-bottom:2px solid var(--lime);transform:rotate(-45deg) translate(1px,-1px)}
+.plink{color:var(--violet);font-weight:700;text-decoration:none;display:inline-flex;gap:6px;align-items:center;font-size:13px}
+.plink:hover{text-decoration:underline}
+
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+input[type=text],input[type=date],select{background:var(--surface-2);border:1.5px solid var(--line);border-radius:12px;padding:9px 12px;width:100%;min-height:40px}
+input[type=text]:focus,input[type=date]:focus,select:focus{border-color:var(--violet);outline:0}
+.form{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;align-items:end}
+.form .span2{grid-column:span 2}.form .span1{grid-column:span 1}
+.spill{appearance:none;-webkit-appearance:none;border:0;border-radius:99px;padding:6px 26px 6px 12px;font-weight:700;font-size:12px;min-height:0;width:auto;background-image:linear-gradient(45deg,transparent 50%,currentColor 50%),linear-gradient(135deg,currentColor 50%,transparent 50%);background-size:5px 5px,5px 5px;background-position:calc(100% - 13px) 55%,calc(100% - 8px) 55%;background-repeat:no-repeat}
+.s-cible{background-color:var(--lav);color:var(--ink)}
+.s-envoyee{background-color:var(--sky);color:var(--ink)}
+.s-relance{background-color:var(--peach);color:var(--ink)}
+.s-entretien{background-color:var(--violet-soft);color:var(--ink)}
+.s-offre{background-color:var(--lime);color:var(--lime-ink)}
+.s-acceptee{background-color:var(--ok);color:#fff}
+.s-refus{background-color:var(--line);color:var(--ink-2)}
+.s-idea{background-color:var(--lav);color:var(--ink)}
+.s-prep{background-color:var(--peach);color:var(--ink)}
+.s-booked{background-color:var(--sky);color:var(--ink)}
+.s-done{background-color:var(--ok);color:#fff}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.fchip{border:1.5px solid var(--line);background:transparent;border-radius:99px;padding:5px 12px;font-weight:500;font-size:12.5px}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.fchip b{font-family:var(--f-mono);font-weight:500;margin-left:4px;opacity:.7}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr) minmax(0,.8fr) minmax(0,.9fr) auto auto;gap:12px;align-items:center;padding:12px 4px;border-top:1px solid var(--line)}
+.row.head{border-top:0;font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);padding-top:0}
+.row b{display:block}
+.row .sub{color:var(--ink-2);font-size:12.5px}
+.iconbtn{border:0;background:transparent;color:var(--ink-2);width:34px;height:34px;border-radius:10px;display:grid;place-items:center}
+.iconbtn:hover{background:var(--surface-2);color:var(--bad)}
+.empty{padding:24px;text-align:center;color:var(--ink-2)}
+.plat{display:flex;flex-direction:column;gap:8px;background:var(--surface-2);border-radius:16px;padding:14px}
+.plat b{font-family:var(--f-display);font-size:16px}
+.plat .cnt{font-family:var(--f-mono);font-size:11px;color:var(--ink-2)}
+
+.phase{display:flex;flex-direction:column;gap:12px}
+.phase .when{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.tl{display:flex;flex-direction:column;gap:16px;position:relative}
+.you{background:var(--lime);color:var(--lime-ink);font-weight:700;border-radius:99px;padding:3px 10px;font-size:11.5px;font-family:var(--f-mono);white-space:nowrap}
+.done-lab{background:var(--ok);color:#fff;border-radius:99px;padding:3px 10px;font-size:11.5px;font-family:var(--f-mono)}
+.soon-lab{background:rgba(0,0,0,.07);border-radius:99px;padding:3px 10px;font-size:11.5px;font-family:var(--f-mono)}
+:root[data-theme="dark"] .soon-lab{background:rgba(255,255,255,.1)}
+.crossed{opacity:.6}
+.crossed h3{text-decoration:line-through}
+.ringwrap{position:relative;flex:none}
+
+.res-tools{display:flex;gap:12px;flex-wrap:wrap;align-items:end}
+.tier-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:6px 4px 0}
+.tier-head h2{font-size:22px}
+.tier-head p{color:var(--ink-2)}
+.tier-n{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;background:var(--ink);color:var(--surface);border-radius:99px;padding:3px 10px}
+.resgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,330px),1fr));gap:16px}
+.res{display:flex;flex-direction:column;gap:12px}
+.res-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.rank{font-family:var(--f-mono);font-size:12px;font-weight:500;color:var(--ink-2)}
+.catlab{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.cost{display:inline-block;border-radius:99px;padding:4px 10px;font-weight:700;font-size:12px;white-space:nowrap}
+.res h3{font-size:19px;line-height:1.15}
+.res .org{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin-top:4px}
+.res .desc{color:var(--ink)}
+.res .meta{font-family:var(--f-mono);font-size:12px;color:var(--ink-2)}
+.res .tip{font-size:13px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:10px}
+.res .links{display:flex;gap:8px;flex-wrap:wrap}
+.res-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.seen{display:flex;gap:8px;align-items:center;cursor:pointer;font-weight:500;font-size:13px}
+.vfy{font-size:12px;display:inline-flex;gap:6px;align-items:center}
+.vfy.ok{color:var(--ok)}
+.vfy.part{color:var(--warn)}
+.vfy svg{width:14px;height:14px;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.watch{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.watch li{display:flex;gap:10px;align-items:flex-start}
+.watch li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--warn);margin-top:7px;flex:none}
+.plinks{display:flex;gap:10px;flex-wrap:wrap}
+
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .tag,:root:not([data-theme="light"]) .soon-lab{background:rgba(255,255,255,.1)}
+  :root:not([data-theme="light"]) .checks label:hover{background:rgba(255,255,255,.05)}
+}
+:root[data-theme="dark"] .checks label:hover{background:rgba(255,255,255,.05)}
+
+@media (max-width:1080px){
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g-home{grid-template-columns:minmax(0,1fr)}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .app{grid-template-columns:minmax(0,1fr);gap:12px}
+  .side{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;height:auto;max-height:none;flex-direction:row;align-items:center;padding:10px;border-radius:20px;gap:10px;overflow-x:auto}
+  .brand span,.side-foot{display:none}
+  .brand b{display:none}
+  .nav{flex-direction:row}
+  .nav button{padding:9px 12px}
+  .g2,.g3{grid-template-columns:minmax(0,1fr)}
+  .form{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .form .span2{grid-column:span 2}
+  .row{grid-template-columns:minmax(0,1fr) auto;row-gap:6px}
+  .row.head{display:none}
+  .row .c-plat,.row .c-type,.row .c-date{grid-column:1;font-size:12.5px;color:var(--ink-2)}
+  .row .c-status{grid-column:1}
+  .row .c-del{grid-column:2;grid-row:1}
+}
+@media (max-width:520px){
+  .g4{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stat .num{font-size:36px}
+  .card{padding:16px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .bar>i{transition:width .5s ease}
+  .folder,.btn,.nav button{transition:filter .15s,background .15s,opacity .15s}
+}
+</style>
+
+<style>html{color-scheme:light dark}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+</head>
+<body>
+<div class="app">
+  <aside class="side" aria-label="Navigation">
+    <div class="brand"><div class="brand-mark">CF</div><div><b>Cap Finance</b><span>Master 2026 – 2028</span></div></div>
+    <nav class="nav" id="nav"></nav>
+    <div class="side-foot" id="sidefoot"></div>
+  </aside>
+  <main class="main" id="view" aria-live="polite"></main>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- Données du plan ---------- */
+var START=new Date(2026,9,1), END=new Date(2028,9,1);
+
+var LEARN=[
+ {id:"m1",title:"La compta pour tous",org:"FUN MOOC",tag:"Étape 1",tone:"lav",url:"https://www.fun-mooc.fr/fr/cours/la-compta-pour-tous/",
+  note:"Les bases de la comptabilité, point de départ du parcours. Option gratuite « découverte » ou option qualifiante payante avec examen surveillé à distance.",
+  steps:["Inscription","Cours suivi en entier","Quiz et évaluations réussis","Certificat qualifiant (optionnel)"]},
+ {id:"m2",title:"L'analyse financière pour tous",org:"FUN MOOC",tag:"Étape 2",tone:"sky",url:"https://www.fun-mooc.fr/fr/cours/lanalyse-financiere-pour-tous/",
+  note:"Lire un bilan et un compte de résultat, calculer des ratios. À suivre une fois la compta acquise.",
+  steps:["Inscription","Cours suivi en entier","Quiz et évaluations réussis","Certificat qualifiant (optionnel)"]},
+ {id:"m3",title:"Le contrôle de gestion pour tous",org:"FUN MOOC · Cnam",tag:"Étape 3",tone:"peach",url:"https://www.fun-mooc.fr/fr/cours/le-controle-de-gestion-pour-tous/",
+  note:"Le cœur du métier visé : coûts, budgets, écarts, tableaux de bord.",
+  steps:["Inscription","Cours suivi en entier","Quiz et évaluations réussis","Certificat qualifiant (optionnel)"]},
+ {id:"m4",title:"Comptabilité de gestion et pratique du tableur",org:"FUN MOOC · IAE Montpellier",tag:"En parallèle",tone:"mint",url:"https://www.fun-mooc.fr/fr/cours/comptabilite-de-gestion-et-pratique-du-tableur/",
+  note:"Combine comptabilité de gestion et tableur : adapté à ton niveau Excel actuel (basique à intermédiaire).",
+  steps:["Inscription","Cours suivi en entier","Exercices tableur réalisés","Certificat qualifiant (optionnel)"]}
+];
+var SKILLS=[
+ {id:"excel",title:"Excel avancé",tone:"mint",tag:"Priorité 1",count:true,
+  note:"Point de départ : basique à intermédiaire. Objectif : tableaux croisés poussés et Power Query.",
+  steps:["Tableaux croisés dynamiques maîtrisés","Fonctions de recherche (RECHERCHEX, INDEX/EQUIV)","Power Query : importer et nettoyer des données","Power Pivot : modèle de données et relations","Tableau de bord dynamique (segments, graphiques)","Modèle budgétaire avec écarts réel / prévu"]},
+ {id:"pbi",title:"Power BI",tone:"lav",tag:"Priorité 1",count:true,
+  note:"L'outil des contrôleurs de gestion pour analyser et visualiser. Pont naturel depuis Excel via Power Query, Power Pivot et Power View.",
+  steps:["Installer Power BI Desktop","Importer et transformer des données","Modéliser : tables et relations","Mesures DAX de base","Premier rapport visuel complet","Refaire le tableau de bord de Wofou dans Power BI"]},
+ {id:"sap",title:"SAP S/4HANA",tone:"sky",tag:"Année 2",count:false,url:"https://learning.sap.com/learning-journeys/discovering-finance",
+  note:"La référence des ERP d'entreprise, à découvrir gratuitement. Pas une priorité de première année.",
+  steps:["Ouvrir learning.sap.com et repérer le parcours « Discovering Finance »","Suivre le parcours « Discovering Finance »","Repérer les modules finance et contrôle (FI / CO)"]}
+];
+var CERTS=[
+ {id:"c_cg",name:"Certification contrôle de gestion",org:"Lefebvre Dalloz Compétences",tag:"Prioritaire",tone:"lav",counts:true,
+  note:"Orientée contrôle de gestion, elle se conclut par une soutenance orale de projet. Tarif catalogue : 5 900 € HT pour 10 jours, à financer (employeur, alternance) ou à comparer avec l'alternative du Cnam.",
+  links:[["Parcours Lefebvre Dalloz","https://formation.lefebvre-dalloz.fr/formations/parcours-controle-de-gestion_1675"],["Alternative : certificat du Cnam","https://cnam-idf.fr/formations/hors-temps-de-travail/diplomes/certificat-de-competence-controle-de-gestion-cc1000a"]]},
+ {id:"c_2",name:"Seconde certification",org:"À choisir",tag:"Objectif n°2",tone:"sky",counts:true,
+  note:"L'objectif réaliste est de deux certifications sur les deux ans. Piste cohérente avec Power BI : Microsoft PL-300 (Power BI Data Analyst), à valider selon la suite du parcours.",
+  links:[["Guide d'étude PL-300","https://learn.microsoft.com/fr-fr/credentials/certifications/resources/study-guides/pl-300"]]},
+ {id:"c_amf",name:"Certification AMF",org:"Option bonus",tag:"Bonus",tone:"peach",counts:true,
+  note:"Pensée pour les métiers de marché, ni obligatoire ni centrale pour le contrôle de gestion. Seulement si le temps le permet.",
+  links:[["Page officielle de l'AMF (en anglais)","https://www.amf-france.org/en/news-publications/depth/amf-examination"]]},
+ {id:"c_toeic",name:"TOEIC",org:"Anglais",tag:"À passer",tone:"mint",counts:false,
+  note:"À passer si possible avant la fin des deux ans. Score de 10 à 990, valable deux ans ; inscription en ligne jusqu'à 10 jours avant la session.",
+  links:[["Le test TOEIC","https://www.etsglobal.org/fr/fr/test-type-family/test-toeic-listening-and-reading"],["S'inscrire","https://www.etsglobal.org/fr/fr/landing-page/inscription-au-test-toeic"]]}
+];
+var CERT_STATUS=[["idea","Envisagée"],["prep","En préparation"],["booked","Inscrit"],["done","Obtenue"]];
+var APP_STATUS=[["cible","À cibler"],["envoyee","Envoyée"],["relance","Relancée"],["entretien","Entretien"],["offre","Offre reçue"],["acceptee","Acceptée"],["refus","Refus"]];
+var PLATFORMS=[
+ {n:"LinkedIn",u:"https://www.linkedin.com/jobs/",d:"Volume d'offres et réseau."},
+ {n:"Indeed",u:"https://fr.indeed.com",d:"Volume d'offres, alertes par e-mail."},
+ {n:"Hellowork",u:"https://www.hellowork.com",d:"Volume d'offres, rubriques stage et alternance."},
+ {n:"LinkFinance",u:"https://www.linkfinance.fr/stages",d:"Spécialisée finance, banque, assurance et audit."},
+ {n:"La bonne alternance",u:"https://labonnealternance.apprentissage.beta.gouv.fr/",d:"Service public : offres et entreprises susceptibles de recruter."}
+];
+var PHASES=[
+ {id:"p1",tone:"t1",tc:"lav",title:"Fondations",when:"Oct – déc. 2026",from:new Date(2026,9,1),to:new Date(2027,0,1),months:3,
+  items:["Rentrée en M1 et prise de repères dans l'école","Terminer « La compta pour tous »","Lancer les candidatures de stage (LinkedIn, LinkFinance, Indeed, Hellowork)","Premiers tableaux croisés dynamiques sur les chiffres de Wofou"]},
+ {id:"p2",tone:"t2",tc:"sky",title:"Stage de M1 et ciblage de l'alternance",when:"Janv. – juin 2027",from:new Date(2027,0,1),to:new Date(2027,6,1),months:6,
+  items:["Décrocher un stage en contrôle de gestion (six mois idéalement)","Terminer « L'analyse financière pour tous » et le MOOC de l'IAE Montpellier","Réaliser un premier rapport Power BI","Préparer les dossiers d'alternance pour le M2"]},
+ {id:"p3",tone:"t3",tc:"peach",title:"Été : second stage",when:"Juil. – sept. 2027",from:new Date(2027,6,1),to:new Date(2027,9,1),months:3,
+  items:["Enchaîner sur un autre stage l'été suivant, si possible","Terminer « Le contrôle de gestion pour tous » (Cnam)","Confirmer l'alternance de M2, sinon activer le stage de secours"]},
+ {id:"p4",tone:"t4",tc:"mint",title:"M2 : alternance ou stage de secours",when:"Oct. 2027 – sept. 2028",from:new Date(2027,9,1),to:new Date(2028,9,1),months:12,
+  items:["Alternance en M2 (ou stage de secours)","Certification contrôle de gestion et soutenance du projet","Seconde certification","Passer le TOEIC","Diplôme en poche et bilan des deux à trois expériences terrain"]}
+];
+/* Ressources — liens ouverts et lus le 21 septembre 2026 (v:"ok"), ou signalés (v:"part") */
+var CATS=[["all","Tout"],["cours","Cours en ligne"],["outils","Outils"],["certifs","Certifications"],["refs","Références"],["stage","Stage et alternance"],["reseau","Réseau"]];
+var CATLAB={cours:"Cours en ligne",outils:"Outils",certifs:"Certification",refs:"Référence",stage:"Stage et alternance",reseau:"Réseau"};
+var TIERS=[
+ {n:1,t:"Dès maintenant",d:"Octobre – décembre 2026 : ce qui débloque le reste."},
+ {n:2,t:"Cette année de M1",d:"À enchaîner au fil de l'année, dans l'ordre affiché."},
+ {n:3,t:"Plus tard ou en bonus",d:"Utile, mais pas prioritaire."}
+];
+var COSTCLS={free:"s-offre",freemium:"s-envoyee",paid:"s-relance",info:"s-cible"};
+var RES=[
+ {id:"fun-compta",tier:1,cat:"cours",name:"La compta pour tous",org:"Cnam · FUN MOOC",cost:"freemium",cl:"Gratuit ou 80 €",
+  desc:"Les bases de la comptabilité, en partant de zéro. C'est le point de départ du parcours.",
+  meta:"6 semaines · environ 35 h · en français",
+  tip:"Option découverte gratuite. Le certificat s'obtient avec un examen surveillé en ligne à 80 €.",
+  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/la-compta-pour-tous/"]],v:"ok"},
+ {id:"fun-tableur",tier:1,cat:"cours",name:"Comptabilité de gestion et pratique du tableur",org:"IAE Montpellier · FUN MOOC",cost:"info",cl:"Badge dès 12/20",
+  desc:"La comptabilité de gestion apprise directement dans le tableur : adapté à ton niveau Excel actuel, à suivre en parallèle de la compta.",
+  meta:"6 semaines · environ 24 h · en français",
+  tip:"Badge de réussite à partir de 12/20, avec un parcours avancé qui délivre une attestation.",
+  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/comptabilite-de-gestion-et-pratique-du-tableur/"]],v:"ok"},
+ {id:"xl-ms",tier:1,cat:"outils",name:"Aide et apprentissage d'Excel",org:"Microsoft Support",cost:"free",cl:"Gratuit",
+  desc:"Guides et vidéos officiels : formules et fonctions (RECHERCHEX, RECHERCHEV, SI), import de données, tableaux croisés dynamiques.",
+  meta:"À la carte · en français",
+  links:[["Ouvrir","https://support.microsoft.com/fr-fr/office/vid%C3%A9o-de-formation-excel-9bc05390-e94c-46af-a5b3-d7c22f6990bb"]],v:"ok"},
+ {id:"linkfinance",tier:1,cat:"stage",name:"LinkFinance",org:"Emploi spécialisé finance",cost:"free",cl:"Gratuit",
+  desc:"Plateforme d'emploi spécialisée finance, banque, assurance et audit, avec des rubriques de stages en contrôle de gestion et trésorerie.",
+  meta:"À consulter chaque semaine",
+  links:[["Offres de stage","https://www.linkfinance.fr/stages"],["Contrôle de gestion / trésorerie","https://www.linkfinance.fr/stages-Controle-de-Gestion-Tresorerie-sidss-3.html"]],
+  v:"part",vnote:"Le site s'ouvre, mais ses listes d'offres n'ont pas pu être lues automatiquement : vérifie au premier clic."},
+ {id:"bonne-alternance",tier:1,cat:"stage",name:"La bonne alternance",org:"Service public",cost:"free",cl:"Gratuit",
+  desc:"Recherche par métier et par ville, offres agrégées (France Travail, Hellowork…), entreprises susceptibles de recruter et candidatures spontanées sans compte.",
+  meta:"Utile pour l'alternance de M2 comme pour le stage",
+  links:[["Ouvrir le service","https://labonnealternance.apprentissage.beta.gouv.fr/"]],v:"ok"},
+ {id:"hellowork",tier:1,cat:"stage",name:"Hellowork",org:"Offres d'emploi",cost:"free",cl:"Gratuit",
+  desc:"Gros volume d'offres, avec des rubriques dédiées aux stages et à l'alternance, plus les alertes par e-mail.",
+  meta:"Alertes e-mail à créer dès la rentrée",
+  links:[["Ouvrir le site","https://www.hellowork.com"]],v:"ok"},
+ {id:"linkedin",tier:1,cat:"stage",name:"LinkedIn Emplois",org:"LinkedIn",cost:"free",cl:"Gratuit",
+  desc:"Offres de grands groupes et d'ETI, plus le réseau : recruteurs, anciens de ton école, contrôleurs de gestion en poste.",
+  meta:"Filtre « Stage » ou « Alternance », mot-clé « contrôle de gestion »",
+  links:[["Ouvrir la recherche d'emplois","https://www.linkedin.com/jobs/"]],
+  v:"part",vnote:"Lien officiel, mais LinkedIn interdit la lecture automatique : il n'a pas pu être testé en profondeur."},
+ {id:"indeed",tier:1,cat:"stage",name:"Indeed France",org:"Offres d'emploi",cost:"free",cl:"Gratuit",
+  desc:"Gros volume d'offres, utile pour les ETI et PME que les autres plateformes couvrent moins.",
+  meta:"Alertes e-mail par mot-clé",
+  links:[["Ouvrir le site","https://fr.indeed.com"]],v:"ok"},
+ {id:"xl-pratique",tier:1,cat:"outils",name:"Excel-Pratique.com",org:"Site indépendant",cost:"free",cl:"Gratuit",
+  desc:"Tutoriels gratuits en français : bases, filtres, graphiques, tableaux croisés dynamiques, puis VBA, avec une référence des fonctions.",
+  meta:"À la carte · en français",
+  links:[["Ouvrir le site","https://www.excel-pratique.com"]],v:"ok"},
+ {id:"vernimmen",tier:1,cat:"refs",name:"Vernimmen.net",org:"Finance d'entreprise",cost:"free",cl:"Gratuit",
+  desc:"La référence française de la finance d'entreprise : glossaire de plusieurs milliers de termes, quiz de 467 questions corrigées, lettre mensuelle, podcasts de cours HEC.",
+  meta:"À garder ouvert pendant les cours",
+  links:[["Ouvrir le site","https://www.vernimmen.net/"],["Lexique français / anglais","https://www.vernimmen.net/Pratiquer/Lexique.php"]],v:"ok"},
+
+ {id:"fun-analyse",tier:2,cat:"cours",name:"L'analyse financière pour tous",org:"Cnam · FUN MOOC",cost:"freemium",cl:"Gratuit ou 80 €",
+  desc:"Lire un bilan et un compte de résultat, calculer et interpréter des ratios. À suivre une fois la compta acquise.",
+  meta:"6 semaines · environ 35 h · en français",
+  tip:"Option découverte gratuite. Option qualifiante à 80 € avec examen surveillé.",
+  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/lanalyse-financiere-pour-tous/"]],v:"ok"},
+ {id:"fun-cdg",tier:2,cat:"cours",name:"Le contrôle de gestion pour tous",org:"Cnam · FUN MOOC",cost:"freemium",cl:"Gratuit ou 80 €",
+  desc:"Le cœur du métier visé : coûts, budgets, écarts, tableaux de bord.",
+  meta:"5 semaines · environ 35 h · en français",
+  tip:"Le certificat passe par un examen surveillé à distance de 2 h, à 80 €.",
+  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/le-controle-de-gestion-pour-tous/"]],v:"ok"},
+ {id:"pbi-desktop",tier:2,cat:"outils",name:"Power BI Desktop",org:"Microsoft",cost:"free",cl:"Gratuit",
+  desc:"L'application gratuite pour créer des rapports interactifs, l'outil des contrôleurs de gestion pour analyser et visualiser.",
+  meta:"Tourne sous Windows ; sur Mac, passe par Power BI dans le navigateur",
+  links:[["Télécharger","https://www.microsoft.com/fr-fr/power-platform/products/power-bi/desktop"]],v:"ok"},
+ {id:"pbi-start",tier:2,cat:"outils",name:"Prise en main de l'analytique des données avec Microsoft",org:"Microsoft Learn",cost:"free",cl:"Gratuit",
+  desc:"Le parcours d'entrée : le processus d'analyse, puis « Commencer à créer avec Power BI » (6 unités), Microsoft Fabric et Copilot.",
+  meta:"4 modules · niveau intermédiaire · aucun prérequis",
+  links:[["Ouvrir le parcours","https://learn.microsoft.com/fr-fr/training/paths/get-started-power-bi/"],["Module Power BI","https://learn.microsoft.com/fr-fr/training/modules/get-started-with-power-bi/"]],v:"ok"},
+ {id:"pq",tier:2,cat:"outils",name:"Qu'est-ce que Power Query ?",org:"Microsoft Learn",cost:"free",cl:"Gratuit",
+  desc:"Le moteur de préparation de données, sans code, utilisé dans Excel et Power BI : le pont naturel entre les deux outils.",
+  meta:"Documentation officielle",
+  links:[["Lire","https://learn.microsoft.com/fr-fr/power-query/power-query-what-is-power-query"]],v:"ok"},
+ {id:"pbi-hub",tier:2,cat:"outils",name:"Formation pour Power BI",org:"Microsoft Learn",cost:"free",cl:"Gratuit",
+  desc:"Le hub des parcours : nettoyer et transformer avec Power Query, modéliser (calculs et relations), puis visuels et rapports.",
+  meta:"Trois parcours, à faire dans cet ordre",
+  links:[["Ouvrir le hub","https://learn.microsoft.com/fr-fr/training/powerplatform/power-bi"]],v:"ok"},
+ {id:"toeic",tier:2,cat:"certifs",name:"TOEIC Listening and Reading",org:"ETS Global",cost:"info",cl:"Tarif à l'inscription",
+  desc:"Score de 10 à 990, valable deux ans. Format standard de 2 h : 45 min d'écoute et 75 min de lecture.",
+  meta:"Inscription en ligne jusqu'à 10 jours avant la session, paiement par carte",
+  tip:"Vise la fin du M1 ou le début du M2 : le score reste valable deux ans.",
+  links:[["Le test","https://www.etsglobal.org/fr/fr/test-type-family/test-toeic-listening-and-reading"],["S'inscrire","https://www.etsglobal.org/fr/fr/landing-page/inscription-au-test-toeic"]],v:"ok"},
+ {id:"cert-lefebvre",tier:2,cat:"certifs",name:"Parcours Contrôle de gestion, Lefebvre Dalloz Compétences",org:"Certification Lefebvre Dalloz",cost:"paid",cl:"5 900 € HT",
+  desc:"Dix jours en blended learning (six modules de deux jours). La certification est délivrée après des QCM en continu et une soutenance orale de projet.",
+  meta:"Pensé pour des contrôleurs de gestion récemment nommés ou en reconversion",
+  tip:"Le tarif est élevé pour un étudiant : à envisager avec un financement (employeur, alternance).",
+  links:[["Ouvrir le parcours","https://formation.lefebvre-dalloz.fr/formations/parcours-controle-de-gestion_1675"]],v:"ok"},
+ {id:"cert-cnam",tier:2,cat:"certifs",name:"Certificat de compétence Contrôle de gestion (CC1000A)",org:"Cnam",cost:"info",cl:"Tarif non affiché",
+  desc:"Alternative académique à comparer avec le parcours Lefebvre Dalloz : niveau Bac+2 minimum, 28 crédits ECTS.",
+  meta:"À distance, classe virtuelle, cours du soir ou hybride",
+  tip:"Inscriptions annoncées en septembre–octobre 2026 puis janvier–mars 2027. Demande le tarif à l'antenne Cnam de ta région.",
+  links:[["Ouvrir la fiche","https://cnam-idf.fr/formations/hors-temps-de-travail/diplomes/certificat-de-competence-controle-de-gestion-cc1000a"]],v:"ok"},
+ {id:"pl300",tier:2,cat:"certifs",name:"PL-300 : Microsoft Power BI Data Analyst",org:"Microsoft",cost:"info",cl:"Tarif sur la page Microsoft",
+  desc:"Certification Associate qui valide Power Query et DAX. Quatre domaines : préparer (25–30 %), modéliser (25–30 %), visualiser (25–30 %), gérer et sécuriser (15–20 %). Score de réussite : 700.",
+  meta:"Piste de seconde certification, à valider",
+  links:[["Guide d'étude","https://learn.microsoft.com/fr-fr/credentials/certifications/resources/study-guides/pl-300"]],v:"ok"},
+ {id:"dfcg",tier:2,cat:"reseau",name:"DFCG",org:"Directeurs financiers et contrôle de gestion",cost:"info",cl:"Offre étudiants",
+  desc:"L'association nationale des financiers d'entreprise : événements, formations et réseau, avec une antenne Auvergne-Rhône-Alpes et une offre préférentielle pour les étudiants.",
+  meta:"Le prix de l'offre étudiants n'est pas affiché sur la page",
+  links:[["Ouvrir le site","https://www.dfcg.fr/"],["Offre étudiants","https://www.dfcg.fr/accompagnez-les-etudiants-financegestion-les-futurs-dirigeants-financiers-de-demain-faites-leur-profiter-dune-offre-ultra-preferentielle/"]],v:"ok"},
+ {id:"apec",tier:2,cat:"stage",name:"Apec",org:"Association pour l'emploi des cadres",cost:"free",cl:"Gratuit",
+  desc:"Offres d'emploi cadres, conseils de carrière, simulateur d'entretien, comparateur de salaires, avec une rubrique alternance dans le menu.",
+  meta:"Plus utile en M2 et après le diplôme",
+  links:[["Ouvrir le site","https://www.apec.fr"]],v:"ok"},
+
+ {id:"sap-fin",tier:3,cat:"outils",name:"« Discovering Finance »",org:"SAP Learning",cost:"info",cl:"Voir la page",
+  desc:"Parcours de découverte de la finance dans SAP S/4HANA : comptabilité fournisseurs et clients, clôture, immobilisations, gestion des coûts et analyse de rentabilité, trésorerie, reporting de groupe.",
+  meta:"Pas une priorité de première année",
+  links:[["Ouvrir le parcours","https://learning.sap.com/learning-journeys/discovering-finance"],["Portail SAP Learning","https://learning.sap.com"]],v:"ok"},
+ {id:"amf",tier:3,cat:"certifs",name:"Certification AMF",org:"Autorité des marchés financiers",cost:"info",cl:"Option bonus",
+  desc:"Vérifie les connaissances minimales des professionnels des marchés : vendeurs, gérants, analystes financiers, traders, responsables conformité.",
+  meta:"Page en anglais · ni obligatoire ni centrale pour le contrôle de gestion",
+  links:[["Page officielle de l'AMF","https://www.amf-france.org/en/news-publications/depth/amf-examination"]],v:"ok"}
+];
+var VERIF_DATE="21 sept. 2026";
+
+var SEED=[
+ {id:"a1",company:"LVMH",role:"Stage en contrôle de gestion",platform:"LinkedIn",type:"Stage",status:"cible",date:""},
+ {id:"a2",company:"TotalEnergies",role:"Stage en contrôle de gestion",platform:"LinkedIn",type:"Stage",status:"cible",date:""},
+ {id:"a3",company:"Renault",role:"Stage en contrôle de gestion",platform:"LinkedIn",type:"Stage",status:"cible",date:""},
+ {id:"a4",company:"SNCF",role:"Stage en contrôle de gestion",platform:"LinkedIn",type:"Stage",status:"cible",date:""}
+];
+
+/* ---------- Icônes ---------- */
+var ICONS={
+ home:"M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z",
+ book:"M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2zM4 19a2 2 0 0 1 2-2h13",
+ badge:"M12 3a6 6 0 1 0 0 12 6 6 0 0 0 0-12zM8.5 14.5L7 21l5-3 5 3-1.5-6.5",
+ brief:"M3 8h18v12H3zM9 8V5h6v3M3 13h18",
+ chart:"M4 20V10M10 20V4M16 20v-7M22 20H2",
+ route:"M5 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM19 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM7 17h7a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h7",
+ arrow:"M7 17L17 7M9 7h8v8",
+ trash:"M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13",
+ plus:"M12 5v14M5 12h14",
+ link:"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1",
+ check:"M5 12.5l4.5 4.5L19 7.5",
+ warn:"M12 8v5M12 17h.01M10.3 3.9L2.5 18a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"
+};
+function ico(n){return '<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="'+ICONS[n]+'"/></svg>';}
+
+/* ---------- État ---------- */
+var LS="capfinance.v1";
+var S=load();
+var UI={view:"home",filter:"all",rescat:"all",q:""};
+try{var v=localStorage.getItem(LS+".view"); if(v) UI.view=v;}catch(e){}
+
+function norm(x){
+  x=x&&typeof x==="object"?x:{};
+  return {checks:x.checks||{},cert:x.cert||{},apps:Array.isArray(x.apps)?x.apps:JSON.parse(JSON.stringify(SEED))};
+}
+function load(){
+  try{var raw=localStorage.getItem(LS); if(raw) return norm(JSON.parse(raw));}catch(e){}
+  return norm(null);
+}
+var db=null,docRef=null,writing=false,pending=false,dirty=false,timer=null;
+function save(){
+  try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}
+  dirty=true; clearTimeout(timer); timer=setTimeout(flush,700);
+}
+async function flush(){
+  if(!docRef) {dirty=false;return;}
+  if(writing){pending=true;return;}
+  writing=true;
+  try{await docRef.set({json:JSON.stringify(S),updated:new Date().toISOString()});}catch(e){}
+  writing=false;
+  if(pending){pending=false;flush();} else dirty=false;
+}
+async function initDb(){
+  try{
+    if(!window.claude||!window.claude.use) return;
+    db=await window.claude.use("db");
+    if(!db) return;
+    docRef=db.doc("app/state");
+    docRef.onSnapshot(function(snap){
+      if(!snap.exists){ if(!dirty){dirty=true;flush();} return; }
+      var d=snap.data(); if(!d||!d.json||dirty) return;
+      try{
+        var remote=norm(JSON.parse(d.json));
+        if(JSON.stringify(remote)!==JSON.stringify(S)){
+          S=remote;
+          try{localStorage.setItem(LS,JSON.stringify(S));}catch(e){}
+          var a=document.activeElement;
+          if(!(a&&a.closest&&a.closest("form"))) render();
+        }
+      }catch(e){}
+    },function(){});
+  }catch(e){}
+}
+
+/* ---------- Utilitaires ---------- */
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function pct(a,b){return b?Math.round(a/b*100):0;}
+function bar(p){return '<div class="bar" role="progressbar" aria-valuenow="'+p+'" aria-valuemin="0" aria-valuemax="100"><i style="width:'+p+'%"></i></div>';}
+function ring(p,size,stroke){
+  var r=(size-stroke)/2,c=2*Math.PI*r,h=size/2;
+  return '<svg width="'+size+'" height="'+size+'" viewBox="0 0 '+size+' '+size+'" role="img" aria-label="'+p+' %">'+
+   '<circle cx="'+h+'" cy="'+h+'" r="'+r+'" fill="none" stroke="#3a3350" stroke-width="'+stroke+'"/>'+
+   '<circle cx="'+h+'" cy="'+h+'" r="'+r+'" fill="none" stroke="#C8F25A" stroke-width="'+stroke+'" stroke-linecap="round" stroke-dasharray="'+(c*p/100)+' '+c+'" transform="rotate(-90 '+h+' '+h+')"/>'+
+   '<text x="'+h+'" y="'+(h+4)+'" text-anchor="middle" fill="#EFEBFA" font-family="JetBrains Mono, monospace" font-size="13" font-weight="500">'+p+'%</text></svg>';
+}
+function isDone(id){return !!S.checks[id];}
+function today(){return new Date();}
+
+/* ---------- Statistiques ---------- */
+function learnStats(){var d=0,t=0;LEARN.forEach(function(c){for(var i=0;i<3;i++){t++;if(isDone(c.id+"."+i))d++;}});return {d:d,t:t,p:pct(d,t)};}
+function courseStats(c){var d=0;for(var i=0;i<3;i++)if(isDone(c.id+"."+i))d++;return {d:d,t:3,p:pct(d,3)};}
+function skillStat(s){var d=0;s.steps.forEach(function(_,i){if(isDone(s.id+"."+i))d++;});return {d:d,t:s.steps.length,p:pct(d,s.steps.length)};}
+function skillStats(){var d=0,t=0;SKILLS.forEach(function(s){if(!s.count)return;var x=skillStat(s);d+=x.d;t+=x.t;});return {d:d,t:t,p:pct(d,t)};}
+function certState(id){return (S.cert[id]&&S.cert[id].status)||"idea";}
+function certStats(){var n=0;CERTS.forEach(function(c){if(c.counts&&certState(c.id)==="done")n++;});return {n:n,p:Math.min(100,pct(n,2)),toeic:certState("c_toeic")==="done"};}
+function appStats(){
+  var sent=0,acc=0,live=0;
+  S.apps.forEach(function(a){if(a.status!=="cible")sent++;if(a.status==="acceptee")acc++;if(["envoyee","relance","entretien","offre"].indexOf(a.status)>-1)live++;});
+  return {sent:sent,acc:acc,live:live,total:S.apps.length};
+}
+function globalPct(){
+  var L=learnStats(),K=skillStats(),C=certStats(),A=appStats();
+  return Math.round((L.p+K.p+C.p+Math.min(100,pct(A.acc,2)))/4);
+}
+function nextStep(){
+  for(var i=0;i<LEARN.length;i++)for(var j=0;j<3;j++)if(!isDone(LEARN[i].id+"."+j))return {t:LEARN[i].title,s:LEARN[i].steps[j],v:"apprendre"};
+  for(var k=0;k<SKILLS.length;k++){if(!SKILLS[k].count)continue;for(var m=0;m<SKILLS[k].steps.length;m++)if(!isDone(SKILLS[k].id+"."+m))return {t:SKILLS[k].title,s:SKILLS[k].steps[m],v:"competences"};}
+  return null;
+}
+function phaseState(p){var n=today();return n>=p.to?"past":(n>=p.from?"now":"soon");}
+
+/* ---------- Composants ---------- */
+function checklist(id,steps,optFrom){
+  return '<ul class="checks">'+steps.map(function(s,i){
+    var key=id+"."+i,on=isDone(key),opt=optFrom!=null&&i>=optFrom;
+    return '<li><label><input class="cb" type="checkbox" data-check="'+key+'"'+(on?" checked":"")+'><span class="'+(on?"done":"")+'">'+esc(s)+(opt?'<span class="opt">option</span>':"")+'</span></label></li>';
+  }).join("")+'</ul>';
+}
+function head(eyebrow,title,lede,right){
+  return '<header class="top"><div><p class="eyebrow">'+esc(eyebrow)+'</p><h1>'+esc(title)+'</h1>'+(lede?'<p class="lede">'+esc(lede)+'</p>':"")+'</div>'+(right||"")+'</header>';
+}
+
+/* ---------- Vues ---------- */
+function vHome(){
+  var L=learnStats(),K=skillStats(),C=certStats(),A=appStats(),n=today();
+  var dstr=n.toLocaleDateString("fr-FR",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  var chip;
+  if(n<START){var days=Math.ceil((START-n)/864e5);chip='J-'+days+' avant la rentrée d\'octobre';}
+  else if(n>=END){chip='Parcours terminé';}
+  else{var mo=Math.min(24,Math.floor((n-START)/2629800000)+1);chip='Mois '+mo+' sur 24';}
+  var ns=nextStep();
+  var frac=n<START?0:Math.min(1,(n-START)/(END-START));
+  var seg=PHASES.map(function(p){return '<div class="seg '+p.tone+'" style="flex:'+p.months+'">'+esc(p.when.split(" ")[0])+'</div>';}).join("");
+  var pips="";
+  for(var i=0;i<3;i++){pips+='<div class="pip'+(i<A.acc?" on":"")+(i===2?" bonus":"")+'">'+(i<A.acc?"Acquise":(i===2?"Idéal":"À décrocher"))+'</div>';}
+  var counts={};APP_STATUS.forEach(function(s){counts[s[0]]=0;});S.apps.forEach(function(a){counts[a.status]=(counts[a.status]||0)+1;});
+  var pipeline=APP_STATUS.filter(function(s){return counts[s[0]]>0;}).map(function(s){return '<span class="spill s-'+s[0]+'" style="padding-right:12px;background-image:none">'+s[1]+' · '+counts[s[0]]+'</span>';}).join(" ");
+  return head(dstr,"Bonjour Ayemane","Deux ans pour passer de zéro expérience terrain à un profil de contrôleur de gestion solide.",'<span class="chip"><i></i>'+chip+'</span>')+
+  '<section class="grid g4">'+
+   '<div class="card stat lime"><span class="lab">Apprentissage</span><span class="num">'+L.p+'<small>%</small></span>'+bar(L.p)+'<span class="muted">'+L.d+' étapes sur '+L.t+'</span></div>'+
+   '<div class="card stat"><span class="lab">Compétences</span><span class="num">'+K.p+'<small>%</small></span>'+bar(K.p)+'<span class="muted">Excel avancé et Power BI</span></div>'+
+   '<div class="card stat"><span class="lab">Certifications</span><span class="num">'+C.n+'<small>/ 2</small></span>'+bar(C.p)+'<span class="muted">TOEIC : '+(C.toeic?"passé":"à passer")+'</span></div>'+
+   '<div class="card stat"><span class="lab">Candidatures envoyées</span><span class="num">'+A.sent+'</span>'+bar(Math.min(100,pct(A.sent,20)))+'<span class="muted">'+A.live+' en cours de réponse</span></div>'+
+  '</section>'+
+  '<section class="grid g-home">'+
+   '<div class="card next"><div><p class="eyebrow">Prochaine étape</p></div>'+
+    (ns?'<h2>'+esc(ns.s)+'<br><span style="font-weight:500;opacity:.75;font-size:.72em">'+esc(ns.t)+'</span></h2><button class="btn" data-go="'+ns.v+'">Ouvrir la section '+ico("arrow")+'</button>':'<h2>Tout est coché : place aux candidatures et aux certifications.</h2><button class="btn" data-go="stage">Voir les candidatures '+ico("arrow")+'</button>')+
+   '</div>'+
+   '<div class="card dark"><p class="eyebrow">Objectif n°1</p><h2 style="margin-top:6px;font-size:22px">Expérience terrain</h2>'+
+    '<div class="pips">'+pips+'</div><p style="color:var(--side-mute);font-size:13px">Au moins deux expériences sur les deux ans, idéalement trois : stage de M1, second stage, alternance ou stage de secours.</p></div>'+
+  '</section>'+
+  '<section class="grid g-home">'+
+   '<div class="card"><div class="card-head"><h2>Les deux années</h2><button class="btn ghost sm" data-go="frise">Voir la frise</button></div>'+
+    '<div class="track">'+seg+'<div class="now" style="left:'+(frac*100).toFixed(1)+'%"></div></div>'+
+    '<div class="legend"><span>Oct. 2026</span><span>'+(n<START?"Rentrée à venir":"Aujourd'hui")+'</span><span>Sept. 2028</span></div></div>'+
+   '<div class="card"><div class="card-head"><h2>Candidatures</h2><button class="btn ghost sm" data-go="stage">Ouvrir</button></div>'+
+    (pipeline?'<div style="display:flex;flex-wrap:wrap;gap:8px">'+pipeline+'</div>':'<p class="muted">Aucune candidature suivie pour l\'instant.</p>')+'</div>'+
+  '</section>'+
+  '<section class="grid g4" style="margin-top:-2px">'+
+   '<button class="folder tone-lav" data-go="apprendre"><span class="ft">Apprentissage</span><span class="fp">'+L.d+'/'+L.t+'</span><span class="fm"><span>étapes cochées</span>'+ico("arrow")+'</span></button>'+
+   '<button class="folder tone-sky" data-go="certifs"><span class="ft">Certifications</span><span class="fp">'+C.n+'/2</span><span class="fm"><span>objectif deux ans</span>'+ico("arrow")+'</span></button>'+
+   '<button class="folder tone-peach" data-go="stage"><span class="ft">Stage et alternance</span><span class="fp">'+A.total+'</span><span class="fm"><span>entreprises suivies</span>'+ico("arrow")+'</span></button>'+
+   '<button class="folder tone-mint" data-go="competences"><span class="ft">Compétences</span><span class="fp">'+K.p+'%</span><span class="fm"><span>Excel et Power BI</span>'+ico("arrow")+'</span></button>'+
+  '</section>';
+}
+
+function vLearn(){
+  var L=learnStats();
+  return head("Apprentissage","Le parcours gratuit, dans l'ordre","Trois MOOC à suivre dans l'ordre logique, plus un quatrième en parallèle pour le tableur.",'<span class="chip"><i></i>'+L.d+' / '+L.t+' étapes</span>')+
+  '<section class="grid g2">'+LEARN.map(function(c){
+    var st=courseStats(c);
+    return '<article class="tone tone-'+c.tone+' course"><div class="course-head"><div><h3>'+esc(c.title)+'</h3><p class="muted mono" style="font-size:12px;margin-top:4px">'+esc(c.org)+'</p></div><span class="tag">'+esc(c.tag)+'</span></div>'+
+      '<p class="note">'+esc(c.note)+'</p>'+bar(st.p)+checklist(c.id,c.steps,3)+
+      '<a class="plink" href="'+c.url+'" target="_blank" rel="noopener noreferrer">Ouvrir le cours sur FUN MOOC '+ico("arrow")+'</a></article>';
+  }).join("")+'</section>';
+}
+
+function vCerts(){
+  var C=certStats(),pips="";
+  for(var i=0;i<3;i++)pips+='<div class="pip'+(i<C.n?" on":"")+(i===2?" bonus":"")+'">'+(i<C.n?"Obtenue":(i===2?"Bonus":"Objectif"))+'</div>';
+  return head("Certifications","Deux certifications, trois au maximum","Rester réaliste : les projets personnels continuent en parallèle.")+
+  '<section class="card dark"><div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center"><div><p class="eyebrow">Objectif sur les deux ans</p><h2 style="font-size:24px;margin-top:4px">'+C.n+' obtenue'+(C.n>1?"s":"")+' sur 2</h2></div><div class="pips" style="min-width:min(100%,320px);flex:1;max-width:420px;margin:0">'+pips+'</div></div></section>'+
+  '<section class="grid g2">'+CERTS.map(function(c){
+    var st=certState(c.id),dt=(S.cert[c.id]&&S.cert[c.id].date)||"";
+    return '<article class="tone tone-'+c.tone+' course"><div class="course-head"><div><h3>'+esc(c.name)+'</h3><p class="muted mono" style="font-size:12px;margin-top:4px">'+esc(c.org)+'</p></div><span class="tag">'+esc(c.tag)+'</span></div>'+
+     '<p class="note">'+esc(c.note)+'</p>'+
+     '<div style="display:flex;gap:12px;flex-wrap:wrap;align-items:end"><div class="field"><label for="cs-'+c.id+'">Statut</label><select class="spill s-'+st+'" id="cs-'+c.id+'" data-cert="'+c.id+'" style="min-height:34px">'+CERT_STATUS.map(function(o){return '<option value="'+o[0]+'"'+(o[0]===st?" selected":"")+'>'+o[1]+'</option>';}).join("")+'</select></div>'+
+     '<div class="field"><label for="cd-'+c.id+'">Date visée</label><input type="date" id="cd-'+c.id+'" data-certdate="'+c.id+'" value="'+esc(dt)+'" style="min-width:150px"></div></div>'+
+     (c.links?'<div class="plinks">'+c.links.map(function(l){return '<a class="plink" href="'+esc(l[1])+'" target="_blank" rel="noopener noreferrer">'+esc(l[0])+' '+ico("arrow")+'</a>';}).join("")+'</div>':"")+'</article>';
+  }).join("")+
+  '<article class="tone course crossed" style="background:var(--surface-2)"><div class="course-head"><div><h3>CFA</h3><p class="muted mono" style="font-size:12px;margin-top:4px">Écarté</p></div><span class="tag">Écarté</span></div><p class="note">Trop lourd et peu adapté au profil actuel.</p></article>'+
+  '</section>';
+}
+
+function vStage(){
+  var A=appStats();
+  var counts={all:S.apps.length};APP_STATUS.forEach(function(s){counts[s[0]]=0;});S.apps.forEach(function(a){counts[a.status]++;});
+  var list=S.apps.filter(function(a){return UI.filter==="all"||a.status===UI.filter;});
+  var filters='<button class="fchip" aria-pressed="'+(UI.filter==="all")+'" data-filter="all">Toutes<b>'+counts.all+'</b></button>'+APP_STATUS.map(function(s){return '<button class="fchip" aria-pressed="'+(UI.filter===s[0])+'" data-filter="'+s[0]+'">'+s[1]+'<b>'+counts[s[0]]+'</b></button>';}).join("");
+  var platCount={};S.apps.forEach(function(a){if(a.status!=="cible")platCount[a.platform]=(platCount[a.platform]||0)+1;});
+  var rows=list.map(function(a){
+    return '<div class="row"><div><b>'+esc(a.company)+'</b><span class="sub">'+esc(a.role)+'</span></div>'+
+     '<div class="c-plat">'+esc(a.platform||"—")+'</div><div class="c-type">'+esc(a.type)+'</div><div class="c-date mono" style="font-size:12px">'+(a.date?new Date(a.date+"T12:00:00").toLocaleDateString("fr-FR",{day:"numeric",month:"short"}):"—")+'</div>'+
+     '<div class="c-status"><select class="spill s-'+a.status+'" data-appstatus="'+a.id+'" aria-label="Statut de la candidature '+esc(a.company)+'">'+APP_STATUS.map(function(o){return '<option value="'+o[0]+'"'+(o[0]===a.status?" selected":"")+'>'+o[1]+'</option>';}).join("")+'</select></div>'+
+     '<div class="c-del"><button class="iconbtn" data-delapp="'+a.id+'" aria-label="Supprimer '+esc(a.company)+'">'+ico("trash")+'</button></div></div>';
+  }).join("");
+  var opt=function(arr,sel){return arr.map(function(x){return '<option'+(x===sel?" selected":"")+'>'+x+'</option>';}).join("");};
+  var PLATOPT=["LinkedIn","Indeed","Hellowork","LinkFinance","La bonne alternance","Site de l'entreprise","Réseau"];
+  var d=today(),iso=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+  return head("Stage et alternance","Décrocher l'expérience terrain","Viser des stages de six mois dès le M1, sur deux familles d'entreprises en parallèle.",'<span class="chip"><i></i>'+A.sent+' envoyée'+(A.sent>1?"s":"")+' · '+A.acc+' acceptée'+(A.acc>1?"s":"")+'</span>')+
+  '<section class="grid g2">'+
+   '<div class="card tone-lav"><p class="eyebrow">Famille 1</p><h2 style="margin:6px 0">Grandes entreprises cotées</h2><p class="muted">SBF 120 ou SBF 250, elles recrutent en volume. Exemples : LVMH, TotalEnergies, Renault, SNCF.</p></div>'+
+   '<div class="card tone-sky"><p class="eyebrow">Famille 2</p><h2 style="margin:6px 0">ETI et PME</h2><p class="muted">Industrielles ou de services : moins de concurrence et une expérience souvent plus polyvalente pour une première fois.</p></div>'+
+  '</section>'+
+  '<section class="card"><div class="card-head"><h2>Plateformes</h2></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr))">'+PLATFORMS.map(function(p){return '<div class="plat"><b>'+p.n+'</b><span class="muted" style="font-size:13px">'+p.d+'</span><span class="cnt">'+(platCount[p.n]||0)+' candidature'+((platCount[p.n]||0)>1?"s":"")+'</span><a class="plink" href="'+p.u+'" target="_blank" rel="noopener noreferrer">Ouvrir '+ico("arrow")+'</a></div>';}).join("")+'</div></section>'+
+  '<section class="card"><div class="card-head"><h2>Ajouter une entreprise ou une candidature</h2></div>'+
+   '<form class="form" id="appform">'+
+    '<div class="field span2"><label for="f-company">Entreprise</label><input type="text" id="f-company" name="company" required autocomplete="off" placeholder="Ex. Schneider Electric"></div>'+
+    '<div class="field span2"><label for="f-role">Poste</label><input type="text" id="f-role" name="role" autocomplete="off" value="Stage en contrôle de gestion"></div>'+
+    '<div class="field"><label for="f-platform">Plateforme</label><select id="f-platform" name="platform">'+opt(PLATOPT,"LinkedIn")+'</select></div>'+
+    '<div class="field"><label for="f-type">Type</label><select id="f-type" name="type">'+opt(["Stage","Alternance"],"Stage")+'</select></div>'+
+    '<div class="field"><label for="f-status">Statut</label><select id="f-status" name="status">'+APP_STATUS.map(function(o){return '<option value="'+o[0]+'"'+(o[0]==="envoyee"?" selected":"")+'>'+o[1]+'</option>';}).join("")+'</select></div>'+
+    '<div class="field"><label for="f-date">Date</label><input type="date" id="f-date" name="date" value="'+iso+'"></div>'+
+    '<div class="span2" style="align-self:end"><button class="btn" type="submit">'+ico("plus")+' Ajouter</button></div>'+
+   '</form></section>'+
+  '<section class="card"><div class="card-head"><h2>Suivi</h2></div><div class="filters">'+filters+'</div>'+
+   (list.length?'<div class="rows"><div class="row head"><span>Entreprise</span><span>Plateforme</span><span>Type</span><span>Date</span><span>Statut</span><span></span></div>'+rows+'</div>':'<p class="empty">Rien dans cette catégorie pour l\'instant.</p>')+'</section>';
+}
+
+function vSkills(){
+  var K=skillStats();
+  return head("Compétences","Excel avancé et Power BI d'abord","Le pont naturel : Excel avancé, puis Power Query, Power Pivot et Power BI. Entraîne-toi sur les chiffres réels de Wofou.",'<span class="chip"><i></i>'+K.p+' % des priorités</span>')+
+  '<section class="grid g3">'+SKILLS.map(function(s){
+    var st=skillStat(s);
+    return '<article class="tone tone-'+s.tone+' course"><div class="course-head"><h3>'+esc(s.title)+'</h3><span class="tag">'+esc(s.tag)+'</span></div><p class="note">'+esc(s.note)+'</p>'+bar(st.p)+checklist(s.id,s.steps)+
+     (s.url?'<a class="plink" href="'+s.url+'" target="_blank" rel="noopener noreferrer">Ouvrir « Discovering Finance » '+ico("arrow")+'</a>':"")+'</article>';
+  }).join("")+'</section>';
+}
+
+function vFrise(){
+  var n=today();
+  return head("Frise","Les deux années de master","Plan indicatif : stage de M1, second stage l'été suivant, alternance en M2 avec un stage de secours.")+
+  '<section class="tl">'+PHASES.map(function(p){
+    var st=phaseState(p),d=0;p.items.forEach(function(_,i){if(isDone(p.id+"."+i))d++;});
+    var lab=st==="now"?'<span class="you">Tu es ici</span>':(st==="past"?'<span class="done-lab">Passé</span>':'<span class="soon-lab">À venir</span>');
+    return '<article class="tone tone-'+p.tc+' phase"><div class="course-head"><div><p class="when">'+esc(p.when)+'</p><h3 style="font-size:22px;margin-top:2px">'+esc(p.title)+'</h3></div>'+lab+'</div>'+bar(pct(d,p.items.length))+checklist(p.id,p.items)+'</article>';
+  }).join("")+'</section>';
+}
+
+function resCard(r){
+  var rank=RES.indexOf(r)+1,on=isDone("res."+r.id);
+  var links=r.links.map(function(l,i){return '<a class="btn'+(i?" ghost":"")+' sm" href="'+esc(l[1])+'" target="_blank" rel="noopener noreferrer">'+esc(l[0])+' '+ico("arrow")+'</a>';}).join("");
+  var vf=r.v==="ok"?'<span class="vfy ok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+ICONS.check+'"/></svg>Lien vérifié le '+VERIF_DATE+'</span>'
+    :'<span class="vfy part"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+ICONS.warn+'"/></svg>'+esc(r.vnote)+'</span>';
+  return '<article class="card res"><div class="res-top"><span class="rank">#'+rank+' · <span class="catlab">'+esc(CATLAB[r.cat])+'</span></span><span class="cost '+COSTCLS[r.cost]+'">'+esc(r.cl)+'</span></div>'+
+   '<div><h3>'+esc(r.name)+'</h3><p class="org">'+esc(r.org)+'</p></div>'+
+   '<p class="desc">'+esc(r.desc)+'</p>'+
+   (r.meta?'<p class="meta">'+esc(r.meta)+'</p>':"")+
+   (r.tip?'<p class="tip">'+esc(r.tip)+'</p>':"")+
+   '<div class="links">'+links+'</div>'+
+   '<div class="res-foot"><label class="seen"><input class="cb" type="checkbox" data-check="res.'+r.id+'"'+(on?" checked":"")+'>Consulté</label>'+vf+'</div></article>';
+}
+function resList(){
+  var q=UI.q.trim().toLowerCase(),html="",found=0;
+  TIERS.forEach(function(t){
+    var items=RES.filter(function(r){
+      if(r.tier!==t.n)return false;
+      if(UI.rescat!=="all"&&r.cat!==UI.rescat)return false;
+      if(q&&(r.name+" "+r.org+" "+r.desc+" "+CATLAB[r.cat]).toLowerCase().indexOf(q)<0)return false;
+      return true;
+    });
+    if(!items.length)return;
+    found+=items.length;
+    html+='<div class="tier-head"><span class="tier-n">Niveau '+t.n+'</span><h2>'+esc(t.t)+'</h2><p>'+esc(t.d)+'</p></div><div class="resgrid">'+items.map(resCard).join("")+'</div>';
+  });
+  return found?html:'<div class="card"><p class="empty">Aucune ressource ne correspond. Essaie un autre mot-clé ou une autre catégorie.</p></div>';
+}
+function vRes(){
+  var seen=RES.filter(function(r){return isDone("res."+r.id);}).length;
+  var chips=CATS.map(function(c){return '<button class="fchip" aria-pressed="'+(UI.rescat===c[0])+'" data-rescat="'+c[0]+'">'+c[1]+'</button>';}).join("");
+  return head("Ressources","Les bons liens, dans l'ordre","Chaque ressource est classée par priorité : le numéro indique l'ordre conseillé, du niveau 1 au niveau 3.",'<span class="chip"><i></i>'+seen+' / '+RES.length+' consultées</span>')+
+  '<section class="grid g2">'+
+   '<div class="card tone-mint"><p class="eyebrow">Méthode</p><h2 style="margin:6px 0 8px">Liens ouverts et lus le '+VERIF_DATE+'</h2><p class="muted">Chaque lien a été ouvert, et son contenu comparé à la description affichée : titre, durée, tarif, contenu. Deux sources sont signalées en orange, car elles bloquent la lecture automatique.</p></div>'+
+   '<div class="card tone-peach"><p class="eyebrow">Points de vigilance</p><ul class="watch" style="margin-top:10px">'+
+    '<li><span>Le parcours Lefebvre Dalloz coûte <b>5 900 € HT</b> : compare-le avec le certificat du Cnam.</span></li>'+
+    '<li><span>Chaque MOOC du Cnam est gratuit, mais son certificat coûte <b>80 €</b> avec examen surveillé.</span></li>'+
+    '<li><span>Les pages FUN MOOC n\'affichent pas les dates de session : vérifie-les au moment de t\'inscrire.</span></li>'+
+   '</ul></div>'+
+  '</section>'+
+  '<section class="card"><div class="res-tools"><div class="field" style="flex:1;min-width:220px"><label for="resq">Rechercher</label><input type="text" id="resq" value="'+esc(UI.q)+'" placeholder="Power BI, TOEIC, LinkFinance…" autocomplete="off"></div></div><div class="filters" style="margin:14px 0 0">'+chips+'</div></section>'+
+  '<div id="reslist" class="main" style="gap:16px">'+resList()+'</div>';
+}
+
+var VIEWS=[
+ {id:"home",label:"Accueil",icon:"home",fn:vHome},
+ {id:"apprendre",label:"Apprentissage",icon:"book",fn:vLearn},
+ {id:"ressources",label:"Ressources",icon:"link",fn:vRes},
+ {id:"certifs",label:"Certifications",icon:"badge",fn:vCerts},
+ {id:"stage",label:"Stage et alternance",icon:"brief",fn:vStage},
+ {id:"competences",label:"Compétences",icon:"chart",fn:vSkills},
+ {id:"frise",label:"Frise",icon:"route",fn:vFrise}
+];
+
+function render(){
+  var cur=VIEWS.filter(function(v){return v.id===UI.view;})[0]||VIEWS[0];
+  document.getElementById("nav").innerHTML=VIEWS.map(function(v){return '<button data-go="'+v.id+'"'+(v.id===cur.id?' aria-current="page"':"")+'>'+ico(v.icon)+'<span>'+v.label+'</span></button>';}).join("");
+  var g=globalPct();
+  document.getElementById("sidefoot").innerHTML='<div class="ringwrap">'+ring(g,58,6)+'</div><div><b>Parcours global</b><span>Moyenne des quatre axes</span></div>';
+  document.getElementById("view").innerHTML=cur.fn();
+}
+function go(v){
+  UI.view=v;try{localStorage.setItem(LS+".view",v);}catch(e){}
+  render();window.scrollTo(0,0);
+}
+
+/* ---------- Événements ---------- */
+document.addEventListener("click",function(e){
+  var t=e.target.closest("[data-go],[data-filter],[data-delapp],[data-rescat]");
+  if(!t)return;
+  if(t.dataset.go){go(t.dataset.go);}
+  else if(t.dataset.rescat){UI.rescat=t.dataset.rescat;render();}
+  else if(t.dataset.filter){UI.filter=t.dataset.filter;render();}
+  else if(t.dataset.delapp){S.apps=S.apps.filter(function(a){return a.id!==t.dataset.delapp;});save();render();}
+});
+document.addEventListener("change",function(e){
+  var t=e.target;
+  if(t.dataset.check!==undefined&&t.dataset.check!==""){
+    if(t.checked)S.checks[t.dataset.check]=true;else delete S.checks[t.dataset.check];
+    save();render();
+  }else if(t.dataset.cert){
+    S.cert[t.dataset.cert]=Object.assign({},S.cert[t.dataset.cert],{status:t.value});save();render();
+  }else if(t.dataset.certdate){
+    S.cert[t.dataset.certdate]=Object.assign({},S.cert[t.dataset.certdate],{date:t.value});save();
+  }else if(t.dataset.appstatus){
+    S.apps.forEach(function(a){if(a.id===t.dataset.appstatus)a.status=t.value;});save();render();
+  }
+});
+document.addEventListener("input",function(e){
+  if(e.target.id!=="resq")return;
+  UI.q=e.target.value;
+  var box=document.getElementById("reslist");
+  if(box)box.innerHTML=resList();
+});
+document.addEventListener("submit",function(e){
+  if(e.target.id!=="appform")return;
+  e.preventDefault();
+  var f=new FormData(e.target),company=String(f.get("company")||"").trim();
+  if(!company)return;
+  S.apps.unshift({id:"a"+Date.now().toString(36),company:company,role:String(f.get("role")||"").trim(),platform:String(f.get("platform")||""),type:String(f.get("type")||"Stage"),status:String(f.get("status")||"envoyee"),date:String(f.get("date")||"")});
+  UI.filter="all";save();render();
+});
+
+render();
+initDb();
+})();
+</script>
+
+</body>
+</html>
