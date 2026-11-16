@@ -270,18 +270,15 @@ input[type=text]:focus,input[type=date]:focus,select:focus{border-color:var(--vi
 var START=new Date(2026,9,1), END=new Date(2028,9,1);
 
 var LEARN=[
- {id:"m1",title:"La compta pour tous",org:"FUN MOOC",tag:"Étape 1",tone:"lav",url:"https://www.fun-mooc.fr/fr/cours/la-compta-pour-tous/",
-  note:"Les bases de la comptabilité, point de départ du parcours. Option gratuite « découverte » ou option qualifiante payante avec examen surveillé à distance.",
-  steps:["Inscription","Cours suivi en entier","Quiz et évaluations réussis","Certificat qualifiant (optionnel)"]},
- {id:"m2",title:"L'analyse financière pour tous",org:"FUN MOOC",tag:"Étape 2",tone:"sky",url:"https://www.fun-mooc.fr/fr/cours/lanalyse-financiere-pour-tous/",
-  note:"Lire un bilan et un compte de résultat, calculer des ratios. À suivre une fois la compta acquise.",
-  steps:["Inscription","Cours suivi en entier","Quiz et évaluations réussis","Certificat qualifiant (optionnel)"]},
- {id:"m3",title:"Le contrôle de gestion pour tous",org:"FUN MOOC · Cnam",tag:"Étape 3",tone:"peach",url:"https://www.fun-mooc.fr/fr/cours/le-controle-de-gestion-pour-tous/",
-  note:"Le cœur du métier visé : coûts, budgets, écarts, tableaux de bord.",
-  steps:["Inscription","Cours suivi en entier","Quiz et évaluations réussis","Certificat qualifiant (optionnel)"]},
- {id:"m4",title:"Comptabilité de gestion et pratique du tableur",org:"FUN MOOC · IAE Montpellier",tag:"En parallèle",tone:"mint",url:"https://www.fun-mooc.fr/fr/cours/comptabilite-de-gestion-et-pratique-du-tableur/",
-  note:"Combine comptabilité de gestion et tableur : adapté à ton niveau Excel actuel (basique à intermédiaire).",
-  steps:["Inscription","Cours suivi en entier","Exercices tableur réalisés","Certificat qualifiant (optionnel)"]}
+ {id:"m1",title:"Initiez-vous à la comptabilité",org:"OpenClassrooms",tag:"Étape 1",tone:"lav",url:"https://openclassrooms.com/fr/courses/4801106-initiez-vous-a-la-comptabilite",
+  note:"Les bases de la comptabilité, point de départ du parcours : logique de la partie double, classement des comptes, comptes annuels. Cours en libre accès, sans session à attendre.",
+  steps:["Compte OpenClassrooms créé (gratuit)","Cours suivi en entier","Quiz de chaque partie réussis","Parcours complet certifiant (optionnel, payant)"]},
+ {id:"m2",title:"Pilotez la performance financière de l'entreprise",org:"OpenClassrooms",tag:"Étape 2",tone:"sky",url:"https://openclassrooms.com/fr/courses/8971306-pilotez-la-performance-financiere-de-l-entreprise",
+  note:"Lire un compte de résultat et un bilan, distinguer résultat et trésorerie, construire un tableau de bord financier. À suivre une fois la compta acquise.",
+  steps:["Compte OpenClassrooms créé (gratuit)","Cours suivi en entier","Quiz réussis","Parcours complet certifiant (optionnel, payant)"]},
+ {id:"m3",title:"Réalisez des reportings et des budgets pour convaincre",org:"OpenClassrooms",tag:"Étape 3",tone:"peach",url:"https://openclassrooms.com/fr/courses/4963261-realisez-des-reportings-et-des-budgets-pour-convaincre",
+  note:"Le cœur du métier visé : missions du contrôleur de gestion, reporting et indicateurs, construction d'un budget.",
+  steps:["Compte OpenClassrooms créé (gratuit)","Cours suivi en entier","Quiz réussis","Parcours complet certifiant (optionnel, payant)"]}
 ];
 var SKILLS=[
  {id:"excel",title:"Excel avancé",tone:"mint",tag:"Priorité 1",count:true,
@@ -303,7 +300,7 @@ var CERTS=[
   links:[["Guide d'étude PL-300","https://learn.microsoft.com/fr-fr/credentials/certifications/resources/study-guides/pl-300"]]},
  {id:"c_amf",name:"Certification AMF",org:"Option bonus",tag:"Bonus",tone:"peach",counts:true,
   note:"Pensée pour les métiers de marché, ni obligatoire ni centrale pour le contrôle de gestion. Seulement si le temps le permet.",
-  links:[["Page officielle de l'AMF (en anglais)","https://www.amf-france.org/en/news-publications/depth/amf-examination"]]},
+  links:[["Page officielle de l'AMF (en français)","https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/certification-professionnelle"],["Détails de l'examen (en anglais)","https://www.amf-france.org/en/news-publications/depth/amf-examination"]]},
  {id:"c_toeic",name:"TOEIC",org:"Anglais",tag:"À passer",tone:"mint",counts:false,
   note:"À passer si possible avant la fin des deux ans. Score de 10 à 990, valable deux ans ; inscription en ligne jusqu'à 10 jours avant la session.",
   links:[["Le test TOEIC","https://www.etsglobal.org/fr/fr/test-type-family/test-toeic-listening-and-reading"],["S'inscrire","https://www.etsglobal.org/fr/fr/landing-page/inscription-au-test-toeic"]]}
@@ -327,7 +324,7 @@ var PHASES=[
  {id:"p4",tone:"t4",tc:"mint",title:"M2 : alternance ou stage de secours",when:"Oct. 2027 – sept. 2028",from:new Date(2027,9,1),to:new Date(2028,9,1),months:12,
   items:["Alternance en M2 (ou stage de secours)","Certification contrôle de gestion et soutenance du projet","Seconde certification","Passer le TOEIC","Diplôme en poche et bilan des deux à trois expériences terrain"]}
 ];
-/* Ressources — liens ouverts et lus le 21 septembre 2026 (v:"ok"), ou signalés (v:"part") */
+/* Ressources — liens ouverts et lus le 21 septembre 2026, re-vérifiés le 16 novembre 2026 (v:"ok"), ou signalés (v:"part") */
 var CATS=[["all","Tout"],["cours","Cours en ligne"],["outils","Outils"],["certifs","Certifications"],["refs","Références"],["stage","Stage et alternance"],["reseau","Réseau"]];
 var CATLAB={cours:"Cours en ligne",outils:"Outils",certifs:"Certification",refs:"Référence",stage:"Stage et alternance",reseau:"Réseau"};
 var TIERS=[
@@ -337,25 +334,20 @@ var TIERS=[
 ];
 var COSTCLS={free:"s-offre",freemium:"s-envoyee",paid:"s-relance",info:"s-cible"};
 var RES=[
- {id:"fun-compta",tier:1,cat:"cours",name:"La compta pour tous",org:"Cnam · FUN MOOC",cost:"freemium",cl:"Gratuit ou 80 €",
-  desc:"Les bases de la comptabilité, en partant de zéro. C'est le point de départ du parcours.",
-  meta:"6 semaines · environ 35 h · en français",
-  tip:"Option découverte gratuite. Le certificat s'obtient avec un examen surveillé en ligne à 80 €.",
-  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/la-compta-pour-tous/"]],v:"ok"},
- {id:"fun-tableur",tier:1,cat:"cours",name:"Comptabilité de gestion et pratique du tableur",org:"IAE Montpellier · FUN MOOC",cost:"info",cl:"Badge dès 12/20",
-  desc:"La comptabilité de gestion apprise directement dans le tableur : adapté à ton niveau Excel actuel, à suivre en parallèle de la compta.",
-  meta:"6 semaines · environ 24 h · en français",
-  tip:"Badge de réussite à partir de 12/20, avec un parcours avancé qui délivre une attestation.",
-  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/comptabilite-de-gestion-et-pratique-du-tableur/"]],v:"ok"},
+ {id:"oc-compta",tier:1,cat:"cours",name:"Initiez-vous à la comptabilité",org:"OpenClassrooms",cost:"free",cl:"Gratuit",
+  desc:"Les bases de la comptabilité, en partant de zéro : logique de la partie double, classement des comptes, comptes annuels. C'est le point de départ du parcours.",
+  meta:"Environ 4 h · niveau facile · en français · mis à jour le 23/01/2025",
+  tip:"Cours en libre accès, sans session ni inscription à attendre. Seul un parcours complet certifiant OpenClassrooms est payant.",
+  links:[["Ouvrir le cours","https://openclassrooms.com/fr/courses/4801106-initiez-vous-a-la-comptabilite"]],v:"ok"},
  {id:"xl-ms",tier:1,cat:"outils",name:"Aide et apprentissage d'Excel",org:"Microsoft Support",cost:"free",cl:"Gratuit",
   desc:"Guides et vidéos officiels : formules et fonctions (RECHERCHEX, RECHERCHEV, SI), import de données, tableaux croisés dynamiques.",
   meta:"À la carte · en français",
-  links:[["Ouvrir","https://support.microsoft.com/fr-fr/office/vid%C3%A9o-de-formation-excel-9bc05390-e94c-46af-a5b3-d7c22f6990bb"]],v:"ok"},
+  links:[["Ouvrir","https://support.microsoft.com/fr-fr/excel"]],v:"ok"},
  {id:"linkfinance",tier:1,cat:"stage",name:"LinkFinance",org:"Emploi spécialisé finance",cost:"free",cl:"Gratuit",
-  desc:"Plateforme d'emploi spécialisée finance, banque, assurance et audit, avec des rubriques de stages en contrôle de gestion et trésorerie.",
+  desc:"Plateforme d'emploi spécialisée finance, banque, assurance et audit. La page de stages fonctionne et affiche des offres ; le filtre par métier annoncé dans son URL ne renvoie en réalité pas une liste filtrée, utilise la recherche sur la page.",
   meta:"À consulter chaque semaine",
-  links:[["Offres de stage","https://www.linkfinance.fr/stages"],["Contrôle de gestion / trésorerie","https://www.linkfinance.fr/stages-Controle-de-Gestion-Tresorerie-sidss-3.html"]],
-  v:"part",vnote:"Le site s'ouvre, mais ses listes d'offres n'ont pas pu être lues automatiquement : vérifie au premier clic."},
+  links:[["Offres de stage","https://www.linkfinance.fr/stages"]],
+  v:"part",vnote:"Le site s'ouvre et affiche des offres, mais sans dates de publication visibles : vérifie la fraîcheur au premier clic."},
  {id:"bonne-alternance",tier:1,cat:"stage",name:"La bonne alternance",org:"Service public",cost:"free",cl:"Gratuit",
   desc:"Recherche par métier et par ville, offres agrégées (France Travail, Hellowork…), entreprises susceptibles de recruter et candidatures spontanées sans compte.",
   meta:"Utile pour l'alternance de M2 comme pour le stage",
@@ -382,16 +374,16 @@ var RES=[
   meta:"À garder ouvert pendant les cours",
   links:[["Ouvrir le site","https://www.vernimmen.net/"],["Lexique français / anglais","https://www.vernimmen.net/Pratiquer/Lexique.php"]],v:"ok"},
 
- {id:"fun-analyse",tier:2,cat:"cours",name:"L'analyse financière pour tous",org:"Cnam · FUN MOOC",cost:"freemium",cl:"Gratuit ou 80 €",
-  desc:"Lire un bilan et un compte de résultat, calculer et interpréter des ratios. À suivre une fois la compta acquise.",
-  meta:"6 semaines · environ 35 h · en français",
-  tip:"Option découverte gratuite. Option qualifiante à 80 € avec examen surveillé.",
-  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/lanalyse-financiere-pour-tous/"]],v:"ok"},
- {id:"fun-cdg",tier:2,cat:"cours",name:"Le contrôle de gestion pour tous",org:"Cnam · FUN MOOC",cost:"freemium",cl:"Gratuit ou 80 €",
-  desc:"Le cœur du métier visé : coûts, budgets, écarts, tableaux de bord.",
-  meta:"5 semaines · environ 35 h · en français",
-  tip:"Le certificat passe par un examen surveillé à distance de 2 h, à 80 €.",
-  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/le-controle-de-gestion-pour-tous/"]],v:"ok"},
+ {id:"oc-analyse",tier:2,cat:"cours",name:"Pilotez la performance financière de l'entreprise",org:"OpenClassrooms",cost:"free",cl:"Gratuit",
+  desc:"Lire un compte de résultat et un bilan, distinguer résultat et trésorerie, construire un tableau de bord financier. À suivre une fois la compta acquise.",
+  meta:"Environ 4 h · niveau facile · en français · mis à jour le 09/07/2026",
+  tip:"Cours en libre accès, sans session ni inscription à attendre.",
+  links:[["Ouvrir le cours","https://openclassrooms.com/fr/courses/8971306-pilotez-la-performance-financiere-de-l-entreprise"]],v:"ok"},
+ {id:"oc-cdg",tier:2,cat:"cours",name:"Réalisez des reportings et des budgets pour convaincre",org:"OpenClassrooms",cost:"free",cl:"Gratuit",
+  desc:"Le cœur du métier visé : missions du contrôleur de gestion, reporting et indicateurs, écarts, construction d'un budget.",
+  meta:"Environ 12 h · niveau moyen · en français · mis à jour le 23/01/2025",
+  tip:"Cours en libre accès, sans session ni inscription à attendre.",
+  links:[["Ouvrir le cours","https://openclassrooms.com/fr/courses/4963261-realisez-des-reportings-et-des-budgets-pour-convaincre"]],v:"ok"},
  {id:"pbi-desktop",tier:2,cat:"outils",name:"Power BI Desktop",org:"Microsoft",cost:"free",cl:"Gratuit",
   desc:"L'application gratuite pour créer des rapports interactifs, l'outil des contrôleurs de gestion pour analyser et visualiser.",
   meta:"Tourne sous Windows ; sur Mac, passe par Power BI dans le navigateur",
@@ -399,7 +391,7 @@ var RES=[
  {id:"pbi-start",tier:2,cat:"outils",name:"Prise en main de l'analytique des données avec Microsoft",org:"Microsoft Learn",cost:"free",cl:"Gratuit",
   desc:"Le parcours d'entrée : le processus d'analyse, puis « Commencer à créer avec Power BI » (6 unités), Microsoft Fabric et Copilot.",
   meta:"4 modules · niveau intermédiaire · aucun prérequis",
-  links:[["Ouvrir le parcours","https://learn.microsoft.com/fr-fr/training/paths/get-started-power-bi/"],["Module Power BI","https://learn.microsoft.com/fr-fr/training/modules/get-started-with-power-bi/"]],v:"ok"},
+  links:[["Ouvrir le parcours","https://learn.microsoft.com/fr-fr/training/paths/data-analytics-microsoft/"],["Module Power BI","https://learn.microsoft.com/fr-fr/training/modules/get-started-with-power-bi/"]],v:"ok"},
  {id:"pq",tier:2,cat:"outils",name:"Qu'est-ce que Power Query ?",org:"Microsoft Learn",cost:"free",cl:"Gratuit",
   desc:"Le moteur de préparation de données, sans code, utilisé dans Excel et Power BI : le pont naturel entre les deux outils.",
   meta:"Documentation officielle",
@@ -429,23 +421,29 @@ var RES=[
   links:[["Guide d'étude","https://learn.microsoft.com/fr-fr/credentials/certifications/resources/study-guides/pl-300"]],v:"ok"},
  {id:"dfcg",tier:2,cat:"reseau",name:"DFCG",org:"Directeurs financiers et contrôle de gestion",cost:"info",cl:"Offre étudiants",
   desc:"L'association nationale des financiers d'entreprise : événements, formations et réseau, avec une antenne Auvergne-Rhône-Alpes et une offre préférentielle pour les étudiants.",
-  meta:"Le prix de l'offre étudiants n'est pas affiché sur la page",
-  links:[["Ouvrir le site","https://www.dfcg.fr/"],["Offre étudiants","https://www.dfcg.fr/accompagnez-les-etudiants-financegestion-les-futurs-dirigeants-financiers-de-demain-faites-leur-profiter-dune-offre-ultra-preferentielle/"]],v:"ok"},
+  meta:"La page dédiée à l'offre étudiants repérée en ligne date de 2020 : demande les conditions actuelles directement via le site.",
+  links:[["Ouvrir le site","https://www.dfcg.fr/"]],v:"ok"},
  {id:"apec",tier:2,cat:"stage",name:"Apec",org:"Association pour l'emploi des cadres",cost:"free",cl:"Gratuit",
   desc:"Offres d'emploi cadres, conseils de carrière, simulateur d'entretien, comparateur de salaires, avec une rubrique alternance dans le menu.",
   meta:"Plus utile en M2 et après le diplôme",
   links:[["Ouvrir le site","https://www.apec.fr"]],v:"ok"},
 
+ {id:"fun-tableur",tier:3,cat:"cours",name:"Comptabilité de gestion et pratique du tableur",org:"IAE Montpellier · FUN MOOC",cost:"info",cl:"Statut de session incertain",
+  desc:"La comptabilité de gestion apprise directement dans le tableur : complément utile une fois les bases posées, si une session est ouverte.",
+  meta:"6 semaines annoncées · environ 24 h · en français",
+  tip:"Les pages Cnam/FUN MOOC n'affichent pas leurs dates de session. Sur ce même portail, « Le contrôle de gestion pour tous » n'a pas eu de session connue depuis fin 2022, et « La compta pour tous » depuis 2018 : vérifie sur fun-mooc.fr qu'une session est bien ouverte avant de t'inscrire plutôt que de t'y fier d'office.",
+  links:[["Ouvrir le cours","https://www.fun-mooc.fr/fr/cours/comptabilite-de-gestion-et-pratique-du-tableur/"]],
+  v:"part",vnote:"Page accessible, mais la disponibilité d'une session active n'a pas pu être confirmée : vérifie avant de t'inscrire."},
  {id:"sap-fin",tier:3,cat:"outils",name:"« Discovering Finance »",org:"SAP Learning",cost:"info",cl:"Voir la page",
   desc:"Parcours de découverte de la finance dans SAP S/4HANA : comptabilité fournisseurs et clients, clôture, immobilisations, gestion des coûts et analyse de rentabilité, trésorerie, reporting de groupe.",
   meta:"Pas une priorité de première année",
   links:[["Ouvrir le parcours","https://learning.sap.com/learning-journeys/discovering-finance"],["Portail SAP Learning","https://learning.sap.com"]],v:"ok"},
  {id:"amf",tier:3,cat:"certifs",name:"Certification AMF",org:"Autorité des marchés financiers",cost:"info",cl:"Option bonus",
   desc:"Vérifie les connaissances minimales des professionnels des marchés : vendeurs, gérants, analystes financiers, traders, responsables conformité.",
-  meta:"Page en anglais · ni obligatoire ni centrale pour le contrôle de gestion",
-  links:[["Page officielle de l'AMF","https://www.amf-france.org/en/news-publications/depth/amf-examination"]],v:"ok"}
+  meta:"Ni obligatoire ni centrale pour le contrôle de gestion",
+  links:[["Page officielle (en français)","https://www.amf-france.org/fr/actualites-publications/dossiers-thematiques/certification-professionnelle"],["Détails de l'examen (en anglais)","https://www.amf-france.org/en/news-publications/depth/amf-examination"]],v:"ok"}
 ];
-var VERIF_DATE="21 sept. 2026";
+var VERIF_DATE="16 nov. 2026";
 
 var SEED=[
  {id:"a1",company:"LVMH",role:"Stage en contrôle de gestion",platform:"LinkedIn",type:"Stage",status:"cible",date:""},
@@ -614,12 +612,12 @@ function vHome(){
 
 function vLearn(){
   var L=learnStats();
-  return head("Apprentissage","Le parcours gratuit, dans l'ordre","Trois MOOC à suivre dans l'ordre logique, plus un quatrième en parallèle pour le tableur.",'<span class="chip"><i></i>'+L.d+' / '+L.t+' étapes</span>')+
+  return head("Apprentissage","Le parcours gratuit, dans l'ordre","Trois cours en libre accès, à suivre dans l'ordre logique : ni session ni inscription à attendre.",'<span class="chip"><i></i>'+L.d+' / '+L.t+' étapes</span>')+
   '<section class="grid g2">'+LEARN.map(function(c){
     var st=courseStats(c);
     return '<article class="tone tone-'+c.tone+' course"><div class="course-head"><div><h3>'+esc(c.title)+'</h3><p class="muted mono" style="font-size:12px;margin-top:4px">'+esc(c.org)+'</p></div><span class="tag">'+esc(c.tag)+'</span></div>'+
       '<p class="note">'+esc(c.note)+'</p>'+bar(st.p)+checklist(c.id,c.steps,3)+
-      '<a class="plink" href="'+c.url+'" target="_blank" rel="noopener noreferrer">Ouvrir le cours sur FUN MOOC '+ico("arrow")+'</a></article>';
+      '<a class="plink" href="'+c.url+'" target="_blank" rel="noopener noreferrer">Ouvrir le cours sur OpenClassrooms '+ico("arrow")+'</a></article>';
   }).join("")+'</section>';
 }
 
@@ -728,11 +726,11 @@ function vRes(){
   var chips=CATS.map(function(c){return '<button class="fchip" aria-pressed="'+(UI.rescat===c[0])+'" data-rescat="'+c[0]+'">'+c[1]+'</button>';}).join("");
   return head("Ressources","Les bons liens, dans l'ordre","Chaque ressource est classée par priorité : le numéro indique l'ordre conseillé, du niveau 1 au niveau 3.",'<span class="chip"><i></i>'+seen+' / '+RES.length+' consultées</span>')+
   '<section class="grid g2">'+
-   '<div class="card tone-mint"><p class="eyebrow">Méthode</p><h2 style="margin:6px 0 8px">Liens ouverts et lus le '+VERIF_DATE+'</h2><p class="muted">Chaque lien a été ouvert, et son contenu comparé à la description affichée : titre, durée, tarif, contenu. Deux sources sont signalées en orange, car elles bloquent la lecture automatique.</p></div>'+
+   '<div class="card tone-mint"><p class="eyebrow">Méthode</p><h2 style="margin:6px 0 8px">Liens ouverts et lus le '+VERIF_DATE+'</h2><p class="muted">Chaque lien a été ouvert, et son contenu comparé à la description affichée : titre, durée, tarif, contenu. Trois sources restent signalées en orange : deux bloquent la lecture automatique (LinkFinance, LinkedIn), une troisième a un statut de session incertain (le MOOC tableur de l\'IAE Montpellier).</p></div>'+
    '<div class="card tone-peach"><p class="eyebrow">Points de vigilance</p><ul class="watch" style="margin-top:10px">'+
     '<li><span>Le parcours Lefebvre Dalloz coûte <b>5 900 € HT</b> : compare-le avec le certificat du Cnam.</span></li>'+
-    '<li><span>Chaque MOOC du Cnam est gratuit, mais son certificat coûte <b>80 €</b> avec examen surveillé.</span></li>'+
-    '<li><span>Les pages FUN MOOC n\'affichent pas les dates de session : vérifie-les au moment de t\'inscrire.</span></li>'+
+    '<li><span>Les trois cours d\'apprentissage principaux (OpenClassrooms) sont gratuits à lire, en libre accès permanent ; seul un parcours complet certifiant est payant.</span></li>'+
+    '<li><span>Les MOOC Cnam/FUN restants n\'affichent pas leurs dates de session, et deux d\'entre eux n\'ont plus eu de session connue depuis 2018 et fin 2022 : vérifie qu\'une session est ouverte avant de t\'y fier.</span></li>'+
    '</ul></div>'+
   '</section>'+
   '<section class="card"><div class="res-tools"><div class="field" style="flex:1;min-width:220px"><label for="resq">Rechercher</label><input type="text" id="resq" value="'+esc(UI.q)+'" placeholder="Power BI, TOEIC, LinkFinance…" autocomplete="off"></div></div><div class="filters" style="margin:14px 0 0">'+chips+'</div></section>'+
